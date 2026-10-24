@@ -357,7 +357,7 @@
     for (let k = 1; k < p.path.length; k++) { const c = idx(p.path[k][0], p.path[k][1]); if (this.fence[c] === p.n) this.fence[c] = -1; }
     const at = this.pos(p);
     const start = p.path[0] || [p.i, p.j];
-    const cells = p.path.length - 1;
+    const cells = p.path.slice(1);
     p.i = start[0];
     p.j = start[1];
     p.ti = p.tj = -1;
@@ -366,7 +366,7 @@
     p.mode = 'walk';
     p.path = [];
     const lose = !this.d.snapFree;
-    this.events.push({ type: 'snap', who: p.id, lost: lose, x: at.x, y: at.y, cells });
+    this.events.push({ type: 'snap', who: p.id, lost: lose, x: at.x, y: at.y, cells, si: start[0], sj: start[1] });
     this.toEdge(p);
     if (lose) this.loseLife(p);
     else p.oopsT = 0.35;
