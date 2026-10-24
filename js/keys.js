@@ -6,7 +6,7 @@ Kit.help.setup({
   keys: [
     ['walk along the garden edge', 'W A S D', '← ↑ → ↓'],
     ['build a fence (hold, and step into the field)', 'Space', 'Enter or /'],
-    ['build slowly: double points (hold)', 'Left Shift or Q', 'Right Shift or .'],
+    ['build slowly: double points (hold)', 'L-Shift or Q', 'R-Shift or .'],
     ['call your brother · high five', 'T', 'T'],
     ['pause · sound', 'P or Esc · M', ''],
   ],

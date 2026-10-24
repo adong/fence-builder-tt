@@ -374,11 +374,12 @@
     body.traverse((n) => { if (n.isMesh && n.geometry.type !== 'CircleGeometry') n.castShadow = true; });
     const sparks = [];
     for (let k = 0; k < 3; k++) {
-      const s = sprite(A.sparkTexture(['#ffffff', '#fff3a0', '#ffc8ff'][k]), 0.28);
+      const s = sprite(A.sparkTexture(['#ffffff', '#fff3a0', '#ffc8ff'][k]), 0.4);
       root.add(s);
       sparks.push(s);
     }
     root.add(body);
+    body.scale.setScalar(1.7);
     this.scene.add(root);
     return { root, body, wings, sparks, yaw: 0, ph: Math.random() * 6 };
   };
@@ -403,7 +404,7 @@
       v.wings.forEach((w, k) => { w.rotation.y = (k ? -1 : 1) * Math.abs(Math.sin(v.ph)) * 0.8; });
       v.sparks.forEach((s, k) => {
         const a = this.t * 2.5 + (k * Math.PI * 2) / 3;
-        s.position.set(Math.cos(a) * 0.45, 0.3 + Math.sin(this.t * 5 + k) * 0.15, Math.sin(a) * 0.45);
+        s.position.set(Math.cos(a) * 0.7, 0.5 + Math.sin(this.t * 5 + k) * 0.2, Math.sin(a) * 0.7);
         s.material.opacity = 0.5 + 0.5 * Math.sin(this.t * 8 + k * 2);
         s.material.rotation = this.t * 3;
       });

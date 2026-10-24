@@ -150,10 +150,10 @@
   #build0 { right: max(18px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); }
   #slow0 { right: calc(max(18px, env(safe-area-inset-right)) + 116px); bottom: max(20px, env(safe-area-inset-bottom)); }
   #build1 { display: none; }
-  /* two players: each brother has his pad in his corner, his BUILD button just above it */
+  /* two players: each brother has his pad in his corner, his BUILD button right next to it (on the inside) */
   .two #slow0 { display: none; }
-  .two #build0 { right: auto; left: max(84px, env(safe-area-inset-left)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 160px); width: 88px; height: 88px; }
-  .two #build1 { display: flex; right: max(30px, env(safe-area-inset-right)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 160px); width: 88px; height: 88px;
+  .two #build0 { right: auto; left: calc(max(64px, env(safe-area-inset-left)) + 162px); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 30px); width: 88px; height: 88px; }
+  .two #build1 { display: flex; right: calc(max(16px, env(safe-area-inset-right)) + 162px); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 30px); width: 88px; height: 88px;
     background: radial-gradient(circle at 50% 35%, #d8fff0, #2fd6a2); }
   @media (max-height: 460px) {
     .pad { width: 120px; height: 120px; }
@@ -165,8 +165,9 @@
     .bbtn { width: 88px; height: 88px; font-size: 30px; }
     .bbtn.slow { width: 64px; height: 64px; font-size: 22px; }
     #slow0 { right: calc(max(18px, env(safe-area-inset-right)) + 12px); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 100px); }
-    .two #build0, .two #build1 { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 128px); width: 74px; height: 74px; }
-    .two #build0 { left: max(86px, env(safe-area-inset-left)); }
+    .two #build0, .two #build1 { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 22px); width: 74px; height: 74px; }
+    .two #build0 { left: calc(max(64px, env(safe-area-inset-left)) + 130px); }
+    .two #build1 { right: calc(max(16px, env(safe-area-inset-right)) + 130px); }
   }
 
   /* ---------- toasts and the level banner ---------- */

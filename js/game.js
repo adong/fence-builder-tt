@@ -328,6 +328,8 @@
     }
     document.querySelector('#hud .mid .pill.small').classList.toggle('hidden', short && playing);
     view.fit(true);
+    // toasts sit just under the HUD, over the far edge of the field, not over the middle where the ball is
+    $('toasts').style.top = (playing ? Math.round(view.margins.top + 6) : Math.round(h * 0.4)) + 'px';
   }
   addEventListener('resize', () => setTimeout(layoutHud, 50));
 
