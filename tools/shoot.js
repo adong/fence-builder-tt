@@ -2,7 +2,8 @@
 /* Screenshots with headless Chrome over the DevTools protocol (node 22's built-in WebSocket, no npm).
    node tools/shoot.js [steps.json] [outdir] [width height mobile]
    Defaults: tools/shots.json, docs/, 1280 x 800, on this folder's index.html from file:// (or set URL=...). Each step may have js (run in the page, using the window.game hooks), wait (ms) and shot (file name).
-   From TT Surf (by way of TT Jetpack). docs/screenshot.jpg: node tools/shoot.js tools/shots.json docs 1200 750 */
+   From TT Surf (by way of TT Jetpack and TT Star Defenders). docs/screenshot.jpg: node tools/shoot.js tools/shots.json docs 1200 750
+   The checks on the single page from file://: URL=file://$PWD/dist/fence-builder-tt.html node tools/shoot.js tools/checks.json /tmp/x 1200 750 */
 'use strict';
 const { spawn } = require('child_process');
 const fs = require('fs');
@@ -13,7 +14,7 @@ const [stepsFile = path.join(__dirname, 'shots.json'), outDir = path.join(dir, '
 const steps = JSON.parse(fs.readFileSync(stepsFile, 'utf8'));
 fs.mkdirSync(outDir, { recursive: true });
 const port = 9400 + Math.floor(Math.random() * 400);
-const prof = fs.mkdtempSync(path.join(require('os').tmpdir(), 'stardefenders-chrome-'));
+const prof = fs.mkdtempSync(path.join(require('os').tmpdir(), 'fencebuilder-chrome-'));
 const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', [
   '--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${prof}`, `--window-size=${W},${H}`,
   '--no-first-run', '--no-default-browser-check', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--hide-scrollbars', 'about:blank',

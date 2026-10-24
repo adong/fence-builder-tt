@@ -1,0 +1,4 @@
+[
+ { "label": "prefs", "js": "localStorage.setItem('claudeGames.muted', '1'); localStorage.removeItem('claudeGames.lang'); localStorage.removeItem('fenceBuilderTT.v1'); location.reload(); 'reload'", "wait": 4000 },
+ { "label": "title", "js": "game.keepAwake(); game.demo(1); for (let k = 0; k < 600; k++) { game.step(0.25, { draw: false }); if (game.G.demo.sim.pct() > 0.45) break; } game.step(0.05); JSON.stringify(game.G.demo.sim.pct())", "wait": 700, "shot": "screenshot" }
+]

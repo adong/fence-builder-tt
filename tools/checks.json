@@ -1,0 +1,8 @@
+[
+ { "label": "prefs", "js": "localStorage.setItem('claudeGames.muted', '1'); localStorage.removeItem('claudeGames.lang'); location.reload(); 'reload'", "wait": 4000 },
+ { "label": "check", "js": "JSON.stringify(game.check(false))" },
+ { "label": "prove", "js": "JSON.stringify(game.prove().ok)" },
+ { "label": "playCheck", "js": "JSON.stringify(game.playCheck())" },
+ { "label": "playProve", "js": "JSON.stringify(game.playProve())" },
+ { "label": "muted", "js": "JSON.stringify({ muted: Kit.sound.isMuted(), button: document.getElementById('btnMute2').textContent })" }
+]
